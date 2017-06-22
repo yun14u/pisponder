@@ -14,7 +14,7 @@ Download pisponder.sh, make it executable and then run as root.
 
 Like this for example:
 ```
-wget https://raw.githubusercontent.com/dee-oh-double-gee/pisponder/master/pisponder.sh
+wget https://raw.githubusercontent.com/yun14u/pisponder/master/pisponder.sh
 
 sudo chmod 755 pisponder.sh
 
