@@ -21,8 +21,7 @@ sudo chmod 755 pisponder.sh
 sudo ./pisponder.sh
 ```
 
-This script will work ONLY on _any_ Raspberry Pi.   Here are the requirements
-* Any Raspberry Pi with an Ethernet connector (except for Pi Zero, most Pi have an Ethernet connector)
+This script will work on any Raspberry Pi that has a Ethernet connector (Model B).  Additional requirements are,
 * An Ethernet crossover cable
 * An USB to micro-USB cable (to provide power to the Pi).
 
