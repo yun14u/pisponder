@@ -20,13 +20,11 @@ sudo chmod 755 pisponder.sh
 
 sudo ./pisponder.sh
 ```
-This script will work ONLY on the Raspberry Pi Zero. And I have only tested it on ver 1.3.
 
-**Demo Video:**
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=0Rrhi5nXQ2k
-" target="_blank"><img src="http://img.youtube.com/vi/0Rrhi5nXQ2k/0.jpg" 
-alt="Pisponder Demo" width="240" height="180" border="10" /></a>
+This script will work ONLY on _any_ Raspberry Pi.   Here are the requirements
+* Any Raspberry Pi with an Ethernet connector (except for Pi Zero, most Pi have an Ethernet connector)
+* An Ethernet crossover cable
+* An USB to micro-USB cable (to provide power to the Pi).
 
 **Credit goes to:**
 
