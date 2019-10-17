@@ -25,7 +25,7 @@ This script will work on any Raspberry Pi that has a Ethernet connector (Model B
 * An Ethernet crossover cable
 * An USB to micro-USB cable (to provide power to the Pi).
 
-**Credit goes to:**
+**Credit goes to: **
 
 https://github.com/lgandx/Responder
 
